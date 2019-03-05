@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * file contains the path of the recorded file in the external storage.
      */
-    File file=null;
+    private File file=null;
     /**
      *operations instance of Operations class used to invoke the operation of Operations class
      * regarding media recording and media player.*/
@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startMedia.setEnabled(false);
         stopMedia.setEnabled(false);
         operations=new Operations(this);
+        getConfigure();
     }
 
     @Override
     public void onClick(View v) {
-        getConfigure();
         switch (v.getId())
         {
             case R.id.startrecording:
